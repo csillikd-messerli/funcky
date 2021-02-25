@@ -5,10 +5,12 @@ Funcky.DataTypes.EitherOrBoth<TLeft, TRight>.Match(System.Action<TLeft>! left, S
 Funcky.DataTypes.EitherOrBoth<TLeft, TRight>.Match<TMatchResult>(System.Func<TLeft, TMatchResult>! left, System.Func<TRight, TMatchResult>! right, System.Func<TLeft, TRight, TMatchResult>! both) -> TMatchResult
 Funcky.Extensions.FunctionCompositionExtensions
 Funcky.Monads.Either<TLeft, TRight>.Match(System.Action<TLeft>! left, System.Action<TRight>! right) -> void
-Funcky.Monads.Factory
+Funcky.Monads.Func
 Funcky.Monads.FuncExtensions
+Funcky.Monads.Io
 Funcky.Monads.Io<T>
 Funcky.Monads.IoExtensions
+Funcky.Monads.State
 Funcky.Monads.State<TState, T>
 Funcky.Monads.StateExtensions
 override Funcky.DataTypes.EitherOrBoth<TLeft, TRight>.Equals(object? obj) -> bool
@@ -57,19 +59,19 @@ static Funcky.Extensions.StringExtensions.SplitLazy(this string! text, string! s
 static Funcky.Extensions.StringExtensions.SplitLines(this string! text) -> System.Collections.Generic.IEnumerable<string!>!
 static Funcky.Functional.False<T0, T1>(T0 ω0, T1 ω1) -> bool
 static Funcky.Functional.True<T0, T1>(T0 ω0, T1 ω1) -> bool
-static Funcky.Monads.Factory.Func(System.Action! action) -> System.Func<Funcky.Unit>!
-static Funcky.Monads.Factory.Func<TResult>(System.Func<TResult>! function) -> System.Func<TResult>!
-static Funcky.Monads.Factory.GetState<TState>() -> Funcky.Monads.State<TState, TState>!
-static Funcky.Monads.Factory.Io(System.Action! action) -> Funcky.Monads.Io<Funcky.Unit>!
-static Funcky.Monads.Factory.Io<TResult>(System.Func<TResult>! function) -> Funcky.Monads.Io<TResult>!
-static Funcky.Monads.Factory.SetState<TState>(TState newState) -> Funcky.Monads.State<TState, Funcky.Unit>!
+static Funcky.Monads.Func.Return(System.Action! action) -> System.Func<Funcky.Unit>!
+static Funcky.Monads.Func.Return<TResult>(System.Func<TResult>! function) -> System.Func<TResult>!
 static Funcky.Monads.FuncExtensions.Func<TSource>(this TSource value) -> System.Func<TSource>!
 static Funcky.Monads.FuncExtensions.Select<TSource, TResult>(this System.Func<TSource>! source, System.Func<TSource, TResult>! selector) -> System.Func<TResult>!
 static Funcky.Monads.FuncExtensions.SelectMany<TSource, TSelector, TResult>(this System.Func<TSource>! source, System.Func<TSource, System.Func<TSelector>!>! selector, System.Func<TSource, TSelector, TResult>! resultSelector) -> System.Func<TResult>!
+static Funcky.Monads.Io.Return(System.Action! action) -> Funcky.Monads.Io<Funcky.Unit>!
+static Funcky.Monads.Io.Return<TResult>(System.Func<TResult>! function) -> Funcky.Monads.Io<TResult>!
 static Funcky.Monads.IoExtensions.Io<TSource>(this TSource value) -> Funcky.Monads.Io<TSource>!
 static Funcky.Monads.IoExtensions.Select<TSource, TResult>(this Funcky.Monads.Io<TSource>! source, System.Func<TSource, TResult>! selector) -> Funcky.Monads.Io<TResult>!
 static Funcky.Monads.IoExtensions.SelectMany<TSource, TSelector, TResult>(this Funcky.Monads.Io<TSource>! source, System.Func<TSource, Funcky.Monads.Io<TSelector>!>! selector, System.Func<TSource, TSelector, TResult>! resultSelector) -> Funcky.Monads.Io<TResult>!
 static Funcky.Monads.Option<TItem>.implicit operator Funcky.Monads.Option<TItem>(TItem item) -> Funcky.Monads.Option<TItem>
+static Funcky.Monads.State.GetState<TState>() -> Funcky.Monads.State<TState, TState>!
+static Funcky.Monads.State.SetState<TState>(TState newState) -> Funcky.Monads.State<TState, Funcky.Unit>!
 static Funcky.Monads.StateExtensions.Select<TState, TSource, TResult>(this Funcky.Monads.State<TState, TSource>! source, System.Func<TSource, TResult>! selector) -> Funcky.Monads.State<TState, TResult>!
 static Funcky.Monads.StateExtensions.SelectMany<TState, TSource, TSelector, TResult>(this Funcky.Monads.State<TState, TSource>! source, System.Func<TSource, Funcky.Monads.State<TState, TSelector>!>! selector, System.Func<TSource, TSelector, TResult>! resultSelector) -> Funcky.Monads.State<TState, TResult>!
 static Funcky.Monads.StateExtensions.State<TState, TSource>(this TSource value) -> Funcky.Monads.State<TState, TSource>!
